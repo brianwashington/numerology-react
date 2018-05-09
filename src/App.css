@@ -82,24 +82,48 @@ a:hover {
   cursor: pointer;
 }
 
-.error {
+.error-enter {
+  visibility: visible;
   display: flex;
-  align-items: flex-start;
-  color: rgba(255, 0, 0, 0);
+  color: rgba(255, 0, 0);
+  opacity: 1;
   font-size: 2em;
   height: 50px;
-  transition: transform 0.4s;
-  transform: translateX(-20px);
+  transform: translateX(-40px);
 }
 
-.error-show {
-  align-self: center;
-  color: rgba(255, 0, 0, 1);
-  transform: translateX(20px);
+.error-enter-active,
+.error-enter-done {
+  visibility: visible;
+  color: rgba(255, 0, 0);
+  transform: translateX(0px);
+  opacity: 1;
+  transition: all 0.5s;
+  font-size: 2em;
+  height: 50px;
+}
+
+.error-exit-active {
+  visibility: visible;
+  color: rgba(255, 0, 0);
+  transform: translateX(-40px);
+  opacity: 1;
+  transition: all 0.5s;
+  font-size: 2em;
+  height: 50px;
+}
+
+.error-exit-done {
+  visibility: visible;
+  color: rgba(255, 0, 0);
+  transform: translateX(0px);
+  opacity: 0;
+  transition: all 0.5s;
+  height: 50px;
 }
 
 .numberTypes {
-  display: none;
+  display: flex;
   flex-direction: column;
   list-style-type: none;
   width: 100%;
@@ -115,8 +139,8 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  border-bottom: 3px dashed rgba(0, 0, 0, 0);
+  width: 100%;
+  border-bottom: 3px dashed rgba(0, 0, 0, 1);
   height: 25vh;
   padding: 10px;
   font-size: 1.8em;

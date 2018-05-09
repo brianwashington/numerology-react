@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 
 class Error extends Component {
-  render() {
-    const { errorMsg } = this.props;
+  componentDidMount() {
+    console.log("mounted");
+  }
 
-    return <div className="error">{errorMsg}</div>;
+  render() {
+    return <div className="error-enter">{this.props.errorMsg}</div>;
   }
 }
 
